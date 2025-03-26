@@ -15,11 +15,12 @@ from textblob.en.sentiments import (
     NaiveBayesAnalyzer,
     PatternAnalyzer,
 )
-
+from textblob.transformer_analyzer import TransformerAnalyzer
 __all__ = [
     "BaseSentimentAnalyzer",
     "DISCRETE",
     "CONTINUOUS",
     "PatternAnalyzer",
     "NaiveBayesAnalyzer",
+    "TransformerAnalyzer",
 ]

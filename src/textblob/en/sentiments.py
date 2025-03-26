@@ -97,6 +97,8 @@ class NaiveBayesAnalyzer(BaseSentimentAnalyzer):
         """
         # Lazily train the classifier
         super().analyze(text)
+        if self._classifier is None:
+            raise ValueError("The classifier has not been trained. Call the 'train' method before analyzing text.")
         tokens = word_tokenize(text, include_punc=False)
         filtered = (t.lower() for t in tokens if len(t) >= 3)
         feats = self.feature_extractor(filtered)
